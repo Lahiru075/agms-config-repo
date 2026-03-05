@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+external:
+  iot:
+    base-url: "http://104.211.95.241:8080/api"
+    username: "sensor_lahiru"
+    password: "123456"
