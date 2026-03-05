@@ -11,7 +11,7 @@ spring:
     gateway:
       routes:
         - id: auth-route
-          uri: http://localhost:8085
+          uri: lb://auth-service
           predicates:
             - Path=/auth/**
 
