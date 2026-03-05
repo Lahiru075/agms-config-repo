@@ -17,5 +17,13 @@ spring:
           predicates:
             - Path=/auth/**
 
+        - id: zone-service
+          uri: lb://zone-service
+          predicates:
+            - Path=/api/zones/**
+          filters:
+            - AuthenticationFilter
+            
+
 jwt:
   secret: "b65ae463fb83f3f8fbc7a06ab440016eccc07c2aebfa9bc11709093894f4773f"
