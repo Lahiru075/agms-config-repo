@@ -11,42 +11,10 @@ spring:
     gateway:
       routes:
         # 1. Auth Service 
-        - id: auth-service
+        - id: auth-route
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
-
-        # 2. Zone Service 
-        - id: zone-service
-          uri: lb://zone-service
-          predicates:
-            - Path=/api/zones/**
-          filters:
-            - AuthenticationFilter
-
-        # 3. Sensor Service
-        - id: sensor-service
-          uri: lb://sensor-service
-          predicates:
-            - Path=/api/sensors/**
-          filters:
-            - AuthenticationFilter
-
-        # 4. Automation Service 
-        - id: automation-service
-          uri: lb://automation-service
-          predicates:
-            - Path=/api/automation/**
-          filters:
-            - AuthenticationFilter
-
-        # 5. Crop Service 
-        - id: crop-service
-          uri: lb://crop-service
-          predicates:
-            - Path=/api/crops/**
-          filters:
-            - AuthenticationFilter
 
 jwt:
   secret: "b65ae463fb83f3f8fbc7a06ab440016eccc07c2aebfa9bc11709093894f4773f"
