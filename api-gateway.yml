@@ -31,7 +31,7 @@ spring:
           filters:
             - AuthenticationFilter
 
-         - id: automation-route
+        - id: automation-route
           uri: lb://automation-service
           predicates:
             - Path=/api/automation/**
