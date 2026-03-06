@@ -30,6 +30,13 @@ spring:
             - Path=/api/sensors/**
           filters:
             - AuthenticationFilter
+
+         - id: automation-route
+          uri: lb://automation-service
+          predicates:
+            - Path=/api/automation/**
+          filters:
+            - AuthenticationFilter
             
 
 jwt:
